@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "@openzeppelin/contracts-upgradeable": "^4.9.2",
+    "@truffle/hdwallet-provider": "^1.5.0",
+    "eth-gas-reporter": "^0.2.22",
+    "ganache": "^6.4.5",
+    "mocha": "^8.3.2"
+  },
+  "devDependencies": {
+    "@openzeppelin/test-helpers": "^0.5.16",
+    "@openzeppelin/truffle-upgrades": "^1.19.0",
+    "sol-merger": "^3.1.0",
+    "truffle-plugin-verify": "^0.5.15"
+  },
+  "scripts": {
+    "build-contracts": "sol-merger \"./contracts/*.sol\" ./build"
+  }
+}
