@@ -22,6 +22,9 @@ This is a smart contract for 3PM Open Studio. It is written in Solidity and depl
 1. Test the ownership of the music/ticket tokens
 2. Test the royalty distribution
 
+## Verify Code
+1. First obtain polygon mainnet and mumbai testnet API keys from [PolygonScan](https://polygonscan.com/)
+2. Run `truffle run verify ThreePMMusic --network matic` to verify the smart contract code on PolygonScan
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
