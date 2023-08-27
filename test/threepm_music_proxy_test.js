@@ -124,6 +124,19 @@ contract("ThreePMMusic Test (Proxy)", function (accounts) {
         assert.equal(tokenURI, newURI + "/" + tokenId, "new URI should be set");
     })
 
+    it('token uri test', async () => {
+        let tokenId = 1;
+        let result = await instance.mintMultiToken(holderAddress, tokenId, 1);
+        let tokenURI = await instance.uri(tokenId);
+        assert.equal(tokenURI, baseUri + "/" + tokenId, "token URI should be set");
+    })
+
+    it('token contract uri test', async () => {
+        let result = await instance.setBaseContractURI(baseContractUri);
+        let contractURI = await instance.contractURI();
+        assert.equal(contractURI, baseContractUri, "contract URI should be set");
+    })
+
     it('pause test (only for Owner)', async () => {
         let tokenId = 12;
         let result = await instance.mintMultiToken(holderAddress, tokenId, 3);
