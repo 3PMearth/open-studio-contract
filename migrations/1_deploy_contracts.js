@@ -2,8 +2,8 @@ const {deployProxy, upgradeProxy} = require('@openzeppelin/truffle-upgrades');
 
 const ThreePMMusic = artifacts.require("ThreePMMusic")
 
-const baseUri = "https://api.com/3PM_MUSIC/token"
-const baseContractUri = "https://api.com/3PM_MUSIC/contract-metadata"
+const baseUri = "https://api-studio-dev.3pm.link/v1/tokens/nft"
+const baseContractUri = "https://api-studio-dev.3pm.link/v1/contract/3PM_MUSIC/metad"
 const tokenName = "3PM_MUSIC"
 const tokenSymbol = "3PM_MUSIC"
 

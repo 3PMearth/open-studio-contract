@@ -110,8 +110,9 @@ contract("ThreePMMusic Test", function (accounts) {
         //check URI
         let tokenId = 1;
         let tokenURI = await instance.uri(tokenId);
-        //console.log("-->" + tokenURI);
         assert.equal(tokenURI, newURI + "/" + tokenId, "new URI should be set");
+        //not allowed to set URI
+        await EXPECT_EXCEPT("revert", instance.setBaseTokenURI(newURI, {from:otherAddress}));
     })
 
     it('pause test (only for Owner)', async () => {
@@ -126,8 +127,8 @@ contract("ThreePMMusic Test", function (accounts) {
         balance = await instance.balanceOf.call(receiverAddress, tokenId);
         assert.equal(balance, 1, "Token balance should be 1");
         //pause
-        //result = await instance.pauseToken()
-        //result = await instance.safeTransferFrom(holderAddress, receiverAddress, tokenId, 1, 0x00, {from: holderAddress});
+        result = await instance.pauseToken()
+        await EXPECT_EXCEPT("revert", instance.safeTransferFrom(holderAddress, receiverAddress, tokenId, 1, 0x00, {from: holderAddress}));
 
     })
 
